@@ -1,0 +1,79 @@
+CREATE DATABASE  IF NOT EXISTS `atcsms` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `atcsms`;
+-- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
+--
+-- Host: localhost    Database: atcsms
+-- ------------------------------------------------------
+-- Server version	5.7.27-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `auth_id` varchar(40) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` VALUES (1,'20S0KPNOIM','azr1'),(2,'54P2EOKQ47','azr2'),(3,'9LLV6I4ZWI','azr3'),(4,'YHWE3HDLPQ','azr4'),(5,'6DLH8A25XZ','azr5');
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `phone_number`
+--
+
+DROP TABLE IF EXISTS `phone_number`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `phone_number` (
+  `id` int(11) NOT NULL,
+  `number` varchar(40) DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `phone_number`
+--
+
+LOCK TABLES `phone_number` WRITE;
+/*!40000 ALTER TABLE `phone_number` DISABLE KEYS */;
+INSERT INTO `phone_number` VALUES (1,'4924195509198',1),(2,'4924195509196',1),(3,'4924195509197',1),(4,'4924195509195',1),(5,'4924195509049',1),(6,'4924195509012',1),(7,'4924195509193',2),(8,'4924195509029',2),(9,'4924195509192',2),(10,'4924195509194',2),(11,'31297728125',2),(12,'3253280312',3),(13,'3253280311',3),(14,'3253280315',3),(15,'3253280313',4),(16,'3253280329',4),(17,'441224459508',4),(18,'441224980086',4),(19,'441224980087',4),(20,'441224980096',4),(21,'441224980098',4),(22,'441224980099',5),(23,'441224980100',5),(24,'441224980094',5),(25,'441224459426',5),(26,'13605917249',5),(27,'441224459548',5),(28,'441224459571',5),(29,'441224459598',5),(30,'13605895047',5);
+/*!40000 ALTER TABLE `phone_number` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-10-12 10:58:59
